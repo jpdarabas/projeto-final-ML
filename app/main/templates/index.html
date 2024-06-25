@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtrar SelectBox</title>
+</head>
+<body>
+    <h1>Filtrar SelectBox com Flask e API</h1>
+
+    <input type="text" id="filtro" onkeyup="filtrarSelect()" placeholder="Digite para filtrar">
+
+    <select id="selectItems">
+        {% for item in items %}
+            <option value="{{ item }}">{{ item }}</option>
+        {% endfor %}
+    </select>
+
+    <script>
+        function filtrarSelect() {
+            var input, filtro, select, options, option, i;
+            input = document.getElementById("filtro");
+            filtro = input.value.toUpperCase();
+            select = document.getElementById("selectItems");
+            options = select.getElementsByTagName("option");
+            for (i = 0; i < options.length; i++) {
+                option = options[i];
+                if (option.innerHTML.toUpperCase().indexOf(filtro) > -1) {
+                    option.style.display = "";
+                } else {
+                    option.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

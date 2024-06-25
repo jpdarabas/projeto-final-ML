@@ -1,2 +1,2 @@
-# projeto-final-ML
-Projeto final da disciplina de Machine Learning na Unisatc
+# Previsão de resultado de partidas de Valorant utilizando técnicas de Machine Learning
+
